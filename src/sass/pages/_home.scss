@@ -1,0 +1,17 @@
+.homepage {
+    background-color: #0B0B0B;
+    display: flex;
+    max-height: calc(100vh - 60px);
+    width: 100%;
+}
+
+.home-container {
+    margin: 0 auto;
+}
+
+.header {
+    margin: 4rem;
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+}
