@@ -1,5 +1,5 @@
 {
-  "name": "mono",
+  "name": "astroplay",
   "private": true,
   "scripts": {
     "build": "turbo build",
