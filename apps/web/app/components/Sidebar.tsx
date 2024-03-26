@@ -1,7 +1,13 @@
 import Image from 'next/image';
 import '../sass/main.scss';
 
-const Sidebar = ({ toggleClassName, classNameLinks }) => {
+const Sidebar = ({
+  toggleClassName,
+  classNameLinks,
+}: {
+  toggleClassName: string;
+  classNameLinks: string;
+}) => {
   return (
     <>
       <div className={toggleClassName}>
