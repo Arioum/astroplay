@@ -11,7 +11,7 @@ Work in progress
 <br/>
 
 ### TechStack:
-[![next, tailwind, ts, node, express, prisma, mongo](https://skillicons.dev/icons?i=next,tailwind,ts,node,express,prisma,mongo)]()
+[![next, tailwind, ts, node, express, prisma, mongo](https://skillicons.dev/icons?i=next,tailwind,ts,nodejs,express,prisma,mongo)]()
 
 ### Tools used:
 [![vscode, postman, vercel](https://skillicons.dev/icons?i=vscode,postman,vercel)]()

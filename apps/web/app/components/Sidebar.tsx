@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { sidebarItemData } from './sidebarItemData';
 import '../sass/main.scss';
 
 const Sidebar = ({ toggleClassName, classNameLinks }) => {
