@@ -7,7 +7,7 @@ const isLoggedIn = false;
 let isNotifications = true;
 let userName = 'Amogh';
 
-const Navbar = ({ sidebarToggle }) => {
+const Navbar = ({ sidebarToggle }: { sidebarToggle: () => void }) => {
   return (
     <nav className='navbar navbar-top'>
       <div className='left-container'>
@@ -68,15 +68,13 @@ const Navbar = ({ sidebarToggle }) => {
         </div>
         <div className='profile-container spacing'>
           <div className='account-login-info'>
-            {isLoggedIn === true ? (
+            {isLoggedIn ? (
               <>
                 <strong>Welcome, {userName}</strong>
                 <a href='/'>View Account settings</a>
               </>
             ) : (
-              <>
-                <LoginModal />
-              </>
+              <LoginModal />
             )}
           </div>
           <div className='account-profile-avatar'>

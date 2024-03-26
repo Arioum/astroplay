@@ -20,7 +20,7 @@ const customStyles = {
   },
 };
 
-const LoginModal = ({ toggleLognav }) => {
+const LoginModal = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -63,7 +63,7 @@ const LoginModal = ({ toggleLognav }) => {
                   height={10}
                 />
               </div>
-              <button class='btn-close' onClick={closeModal}>
+              <button className='btn-close' onClick={closeModal}>
                 <Image
                   src='/icons/close.svg'
                   alt='close'
@@ -113,7 +113,7 @@ const LoginModal = ({ toggleLognav }) => {
                       type='password'
                       name='confirmUserPassword'
                       id=''
-                      validate='required'
+                      required
                       placeholder='Confirm Password'
                     />
                   </>
