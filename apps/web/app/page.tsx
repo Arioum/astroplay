@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
-import Navbar from './components/Navbar';
+import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-import Home from './home/page';
+import Home from './layouts/HomeView';
 
 import './sass/main.scss';
 
@@ -11,15 +11,15 @@ export default function Page(): JSX.Element {
   const toggle = () => setToggleSidebar(!toggleSidebar);
 
   return (
-    <main className=''>
-      <Navbar sidebarToggle={toggle} />
-      <div className='flex'>
+    <>
+      <Header sidebarToggle={toggle} />
+      <main className='relative top-[60px] flex'>
         <Sidebar
           toggleClassName={toggleSidebar ? 'sidebar' : 'sidebar active'}
           classNameLinks={toggleSidebar ? '' : 'active'}
         />
         <Home />
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

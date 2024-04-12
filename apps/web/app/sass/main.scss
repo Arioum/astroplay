@@ -1,30 +1,9 @@
 // Abstracts
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
-
-// Base
-@import "base/base";
-@import "base/animations";
-@import "base/typography";
-@import "base/utilities";
+@import 'abstracts/variables';
 
 // Components
-@import "components/button";
-@import "components/sidebar-items";
-@import "components/video-card";
-@import "components/loginModal";
+@import 'components/button';
+@import 'components/loginModal';
 
 // Layout
-@import "layout/navbar";
-@import "layout/sidebar";
-@import "layout/home-container";
-@import "layout/copyright";
-@import "layout/primary";
-
-// Pages
-@import "pages/home";
-
-
-
-
+@import 'layout/sidebar';
