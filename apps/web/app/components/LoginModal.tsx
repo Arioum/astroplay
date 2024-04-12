@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import Modal from 'react-modal';
 import '../sass/main.scss';
@@ -11,59 +12,59 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    border: 'none',
     borderRadius: '6px',
     backgroundColor: '#202020',
-    zIndex: '5',
+    zIndex: '3',
   },
   overlay: {
-    backgroundImage: '#202020',
+    backgroundColor: '#000000b2',
+    zIndex: '4',
   },
 };
 
 const LoginModal = () => {
-  const [modalIsOpen, setIsOpen] = useState(false);
+  const [isModelOpen, setIsModelOpen] = useState(false);
+  const [login, setLogin] = useState(false);
 
-  function openModal() {
-    setIsOpen(true);
+  function handleModel() {
+    setIsModelOpen(!isModelOpen);
   }
 
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  const [select, setSelect] = useState(false);
-
-  function selectSignUp() {
-    setSelect(true);
-  }
-
-  function selectLogin() {
-    setSelect(false);
+  function handleAuthOptionTab() {
+    setLogin(!login);
   }
 
   return (
     <div className='btn-login'>
-      <button onClick={openModal}>Sign In or Register</button>
+      <button
+        onClick={handleModel}
+        className='text-[--color-secondary] text-[1.2rem] font-[500] bg-transparent border-0 cursor-pointer'
+      >
+        Sign In or Register
+      </button>
       <div className='modal-bg'>
         <Modal
-          isOpen={modalIsOpen}
+          isOpen={isModelOpen}
           // onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
+          onRequestClose={handleModel}
           style={customStyles}
           contentLabel='Example Modal'
         >
-          <div className='modal-container'>
-            <div className='modal-header'>
-              <div className='signup-prompt'>
-                <div className='sign-up'>Join</div>
+          <div className='p-[1rem_2rem_0] flex flex-col gap-[3em]'>
+            <div className='flex justify-between'>
+              <div className='flex'>
+                <div className='text-[2rem] text-[--color-secondary] font-[500] mr-[.8em]'>
+                  Join
+                </div>
                 <Image
                   src='/astroPlayLogo.svg'
                   alt='AstroPlay'
-                  width={160}
+                  width={120}
                   height={10}
                 />
               </div>
-              <button className='btn-close' onClick={closeModal}>
+              <button className='btn-close' onClick={handleModel}>
                 <Image
                   src='/icons/close.svg'
                   alt='close'
@@ -75,13 +76,19 @@ const LoginModal = () => {
             <div className='signin-container'>
               <div className=''>
                 <div className='btn-option'>
-                  <div className={!select ? 'lognav' : 'lognav active'}>
-                    <button className='btn-lognav' onClick={selectSignUp}>
+                  <div className={!login ? 'lognav' : 'lognav active'}>
+                    <button
+                      className='btn-lognav'
+                      onClick={handleAuthOptionTab}
+                    >
                       Sign Up
                     </button>
                   </div>
-                  <div className={select ? 'lognav' : 'lognav active'}>
-                    <button className='btn-lognav' onClick={selectLogin}>
+                  <div className={login ? 'lognav' : 'lognav active'}>
+                    <button
+                      className='btn-lognav'
+                      onClick={handleAuthOptionTab}
+                    >
                       Log In
                     </button>
                   </div>
@@ -89,7 +96,7 @@ const LoginModal = () => {
                 <hr className='hr-nav' />
               </div>
               <div className='input-fields-container'>
-                {!select ? (
+                {!login ? (
                   <>
                     <input
                       type='text'
@@ -151,17 +158,18 @@ const LoginModal = () => {
               </span>
 
               <div className='gmail-signin'>
-                <a href='/' className='social-login-button'>
-                  <div className='social-icon'>
-                    <Image
-                      src='/icons/gmail.svg'
-                      alt='icon'
-                      width={20}
-                      height={20}
-                    />
-                  </div>
-                  <div className='gmail-login-text'>Continue with Gmail</div>
-                </a>
+                <Link
+                  href='/'
+                  className='text-[--color-secondary] text-[1.3rem] flex gap-4'
+                >
+                  <Image
+                    src='/icons/gmail.svg'
+                    alt='icon'
+                    width={20}
+                    height={20}
+                  />
+                  <span>Continue with Gmail</span>
+                </Link>
               </div>
             </div>
             <div className='login-redirect-container'>
