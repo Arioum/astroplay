@@ -1,6 +1,6 @@
 ![astroplay-banner](https://github.com/Arioum/astroplay/assets/95125149/76e73bb4-338d-43eb-a36d-ab7440f0d176)
 
-# AstroPlay - Check flight status
+# AstroPlay
 ### A video streaming platform that brings the best features of YouTube and Twitch together.
 
 <br/>
